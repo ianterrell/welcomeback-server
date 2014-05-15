@@ -2,7 +2,7 @@
 
 <h1><%= @event.name %></h1>
 
-<pre><%= JSON.pretty_generate(JSON.parse(@event.data)) %></pre>
+<pre><%= @event.data %></pre>
 
 <%= link_to 'Edit', edit_event_path(@event) %> |
 <%= link_to 'Back', events_path %>
