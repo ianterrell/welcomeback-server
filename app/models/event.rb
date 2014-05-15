@@ -7,4 +7,8 @@ class Event < ActiveRecord::Base
   def data_is_json
     errors[:data] << "not in json format" unless data.is_json?
   end
+  
+  def as_json(options={})
+    JSON.parse(self.data).merge(id: id, name: name)
+  end
 end
